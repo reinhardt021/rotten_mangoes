@@ -4,8 +4,8 @@
 <hr>
 <%= form_tag("/search", method: "get") do %>
   <div>
-    <%= label_tag(:q, "Search for:") %>
-    <%= text_field_tag(:q)%>  
+    <%= label_tag :search, "Search for:" %>
+    <%= text_field_tag :search, params[:search] %>  
     <%= submit_tag "Search" %>
   </div>
 <% end %>
