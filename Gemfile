@@ -35,7 +35,12 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+# Use CarrierWave to upload images
 gem 'carrierwave'
+
+# Use Kaminari for pagination
+gem 'kaminari'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
