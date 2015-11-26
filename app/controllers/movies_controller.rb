@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
-    if params[:title] || params[:director] || params[:runtime]
-      @movies = Movie.search(params[:title], params[:director],params[:runtime])
+    if params[:search] || params[:runtime]
+      @movies = Movie.search(params[:search],params[:runtime])
       flash[:notice] = "Search results shown below"
     else
       @movies = Movie.all
