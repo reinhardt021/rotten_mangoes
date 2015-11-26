@@ -18,6 +18,7 @@ class MoviesController < ApplicationController
       end
       
       @movies = Movie.where(sql, title, director)
+      flash[:notice] = "Search results shown below"
     else
       @movies = Movie.all
     end
