@@ -41,6 +41,7 @@ gem 'carrierwave'
 # Use Kaminari for pagination
 gem 'kaminari'
 
+gem 'byebug'
 
 # Use unicorn as the app server
 # gem 'unicorn'

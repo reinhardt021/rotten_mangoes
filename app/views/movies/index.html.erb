@@ -2,14 +2,26 @@
 <hr>
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
-<%= form_tag("/search", method: "get") do %>
+<h3>SEARCH</h3>
+<%= form_tag "/search", method: "get" do %>  
   <div>
-    <%= label_tag :search, "Search for:" %>
-    <%= text_field_tag :search, params[:search] %>  
-    <%= submit_tag "Search" %>
+    <%= label_tag :title, "Title:" %>
+    <%= text_field_tag :title %>  
+  </div>
+  <div>
+    <%= label_tag :director, "Director:" %>
+    <%= text_field_tag :director %>  
+  </div>
+  <div>
+    <%= label_tag :runtime, "Duration:" %>
+    <%= select_tag :runtime, options_for_select(duration_select_options) %>  
+  </div>
+  <div>
+    <%= submit_tag "search" %>
   </div>
 <% end %>
 <hr>
+<h3>MOVIES</h3>
 <% @movies.each do |movie| %>
   <%= link_to image_tag(movie.image_url.to_s), movie_path(movie) %>
   <h2><%= link_to movie.title, movie_path(movie) %></h2>
