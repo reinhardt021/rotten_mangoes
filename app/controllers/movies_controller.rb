@@ -1,23 +1,7 @@
 class MoviesController < ApplicationController
   def index
     if params[:title] || params[:director] || params[:runtime]
-      
-      title = ""
-      director = ""
-
-      title = "%#{params[:title].to_s}%" if params[:title]
-      director = "%#{params[:director].to_s}%" if params[:director]
-      runtime = params[:runtime].to_i
-
-      sql = "title LIKE ? AND director LIKE ?"
-      
-      case runtime
-      when 1 then sql += " AND runtime_in_minutes < 90"
-      when 2 then sql += " AND runtime_in_minutes BETWEEN 90 AND 120"
-      when 3 then sql += " AND runtime_in_minutes > 120"
-      end
-      
-      @movies = Movie.where(sql, title, director)
+      @movies = Movie.search(params[:title], params[:director],params[:runtime])
       flash[:notice] = "Search results shown below"
     else
       @movies = Movie.all
