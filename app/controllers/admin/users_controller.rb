@@ -11,10 +11,13 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    
+    UserMailer.delete_email(@user).deliver_later
+
     @user.reviews.each do |review|
       review.destroy
     end
+    @user.destroy
 
     flash[:notice] = "User #{@user.full_name} deleted from database"
     redirect_to admin_users_path
