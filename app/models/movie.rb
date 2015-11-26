@@ -17,21 +17,15 @@ class Movie < ActiveRecord::Base
   validate :release_date_is_in_the_past
 
 
-  scope :search, lambda { |title, director, runtime|
+  scope :search, lambda { |search, runtime|
     
-    if title
-      title = "%#{title.to_s}%"     
+    if search
+      search = "%#{search.to_s}%"     
     else
-      title = ""
+      search = ""
     end
 
-    if director
-      director = "%#{director.to_s}%"  
-    else
-      director = ""
-    end
-
-    sql = "title LIKE ? AND director LIKE ?"
+    sql = "title LIKE ? OR director LIKE ?"
     
     case runtime.to_i
     when 1 then sql += " AND runtime_in_minutes < 90"
@@ -39,7 +33,7 @@ class Movie < ActiveRecord::Base
     when 3 then sql += " AND runtime_in_minutes > 120"
     end
     
-    where(sql, title, director)
+    where(sql, search, search)
   }
 
 
