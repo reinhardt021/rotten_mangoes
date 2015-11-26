@@ -26,7 +26,7 @@
         <td><%= user.admin %></td>
         <td><%= formatted_date(user.created_at) %></td>
         <td><%= formatted_date(user.updated_at) %></td>  
-        <td><%= link_to 'Destroy', "/admin/users/#{user.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+        <td><%= link_to 'delete user', "/admin/users/#{user.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>    
   </tbody>
