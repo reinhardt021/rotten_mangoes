@@ -13,4 +13,12 @@ module MoviesHelper
     ]
   end
 
+  def get_movie(id)
+    Movie.find(id)
+  end
+
+  def movie_title(id)
+    get_movie(id).title
+  end
+
 end

@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     length: { in: 6..20 }, on: :create
 
   def full_name
-    "#{firstname} #{lastname}"
+    "#{firstname.capitalize} #{lastname.capitalize}"
   end
 
 end
