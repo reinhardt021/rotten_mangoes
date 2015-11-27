@@ -43,6 +43,8 @@ gem 'kaminari'
 
 gem 'byebug'
 
+gem 'bootstrap-sass'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

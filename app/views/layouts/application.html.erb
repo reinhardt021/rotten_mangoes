@@ -7,10 +7,15 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <% flash.each do |key,value| %>
-      <%= content_tag(:div, value) %>
-    <% end %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+    <div class="wrapper">
+      <img src="/app/assets/images/Buehne_Baden_Theatre_3.jpg">
+    </div>
+    <div class="container">
+      <% flash.each do |key,value| %>
+        <%= content_tag(:div, value) %>
+      <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
