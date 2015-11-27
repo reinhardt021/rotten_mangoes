@@ -1,0 +1,20 @@
+<h1>User Profile</h1>
+
+<h2>Name: <%= @user.full_name %></h2>
+<h2>Email: <%= @user.email %></h2>
+
+<hr/>
+<h2>REVIEWS</h2>
+<% if @user.reviews.any? %>
+  <% @user.reviews.each do |review| %>
+    <div>
+      <h3><%= link_to movie_title(review.movie_id), movie_path(get_movie(review.movie_id)) %></h3>      
+      <p><%= review.text %></p>
+      <p>Rating: <%= review.rating_out_of_ten %>/10</p>
+
+      <p>Created at: <%= formatted_date(review.created_at) %></p>
+
+    </div>
+    <hr/>
+  <% end %>
+<% end %>

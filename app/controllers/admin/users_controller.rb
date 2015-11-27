@@ -1,7 +1,5 @@
 class Admin::UsersController < ApplicationController
   
-  before_filter :admin?
-
   def index
     if current_user.admin
       @users = User.all.page(params[:page]).per(10)
@@ -56,12 +54,6 @@ class Admin::UsersController < ApplicationController
   end
 
   protected
-
-  def admin?
-    unless current_user.admin
-      
-    end
-  end
 
   def user_params
     params.require(:user).permit(:email, :firstname, :lastname, :admin, :password, :password_confirmation)
