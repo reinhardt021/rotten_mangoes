@@ -1,17 +1,21 @@
-<%= form_tag "/search", method: "get", html: { class: "form-horizontal center" } do %>  
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="input-group">
-        <%= search_field_tag :search, params[:search], placeholder: "Search movie, director, more...", class: "form-control" %>  
-        <span class="input-group-btn">
-          <%= submit_tag "search", class: "btn btn-default" %>
-        </span>
+
+<div class="form-group center">
+  <%= form_tag "/search", method: "get", html: { class: "form-horizontal center" } do %>  
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="input-group">
+          <%= search_field_tag :search, params[:search], placeholder: "Search movie, director, more...", class: "form-control" %>  
+          <span class="input-group-btn">
+            <%= submit_tag "search", class: "btn btn-default" %>
+          </span>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <%= select_tag :runtime, options_for_select(duration_select_options), class: "form-control input-xs" %>  
+      </div>
+    </div>
+  <% end %>
 
-    
-    <span class="input-group-addon"><%= label_tag :runtime, "Duration:" %></span>
-      <%= select_tag :runtime, options_for_select(duration_select_options), class: "btn btn-primary dropdown-toggle" %>  
-      <span class="caret"></span>
-<% end %>
+</div>

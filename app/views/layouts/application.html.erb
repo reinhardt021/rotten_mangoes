@@ -2,20 +2,25 @@
 <html>
   <head>
     <title>RottenMangoes</title>
+
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="wrapper">
+<!--     <div class="wrapper">
       <img src="/app/assets/images/Buehne_Baden_Theatre_3.jpg">
-    </div>
+    </div> -->
+    <%= render 'layouts/header' %>
     <div class="container">
-      <% flash.each do |key,value| %>
-        <%= content_tag(:div, value) %>
-      <% end %>
+      <div class="row">
+        <% flash.each do |key,value| %>
+          <%= content_tag(:div, value) %>
+        <% end %>      
+      </div>
       <%= yield %>
-      <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>

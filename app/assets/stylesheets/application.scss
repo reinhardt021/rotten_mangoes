@@ -18,3 +18,45 @@
 body {
   background-color: #ccc;
 }
+
+.center {
+  width: 50%;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.center form {
+  display: inline-block;
+}
+
+.page-title {
+  text-align: justify;
+}
+
+// .movie-img {
+//   width: 318px;
+//   height: 180px;
+// }
+
+// card
+.card {
+  background-color: white;
+  // border: 1px solid gray;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-block {
+  padding: 10px;
+}
+
+// .card-wrapper {
+//   width: 24%;
+//   display: inline-block;
+//   vertical-align: top;
+// }
