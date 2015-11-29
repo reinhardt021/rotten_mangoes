@@ -1,11 +1,17 @@
 <header>
-  <div class="text-right">
-    <small>
-      <% if current_user %>
-        Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>) (<%= link_to "Admin", admin_users_path %>)
-      <% else %>
-        <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
-      <% end %>
-    </small>
+  <div class="row top">
+    <div class="col-md-2">
+      <h4>ROTTEN MANGOES</h4>
+    </div>
+    <div class="col-md-8">
+      <%= render 'search' %>
+    </div>
+    <div class="col-md-2">
+        <% if current_user %>
+          Hi, <%= current_user.firstname.capitalize %> (<%= link_to "Log out", session_path("current"), method: :delete %>) (<%= link_to "Admin", admin_users_path %>)
+        <% else %>
+          <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
+        <% end %>
+    </div>
   </div>
 </header>
