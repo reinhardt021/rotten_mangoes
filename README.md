@@ -1,4 +1,5 @@
 Rotten Mangoes Rails App
 
-Clone of Rotten Tomatoes movie rating database
-
+Movie database made with Rails, CSS, and Bootstrap
+Users share movies with a brief synopsis, rating, and comment for each
+Clone of Rotten Tomatoes
