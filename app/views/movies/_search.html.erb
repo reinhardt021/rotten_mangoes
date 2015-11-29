@@ -2,10 +2,7 @@
 <div class="form-group center">
   <%= form_tag "/search", method: "get", html: { class: "form-horizontal center" } do %>  
         <div class="input-group">
-          <span class="input-group-btn">
-            <%= select_tag :runtime, options_for_select(duration_select_options), class: "form-control input-xs" %>
-          </span>
-          <span class="input-group-btn" id="sizing-addon1">
+          <span>
             <%= search_field_tag :search, params[:search], placeholder: "Search movie, director, more...", class: "form-control", id: "sizing-addon1" %>  
           </span>
           <span class="input-group-btn">
