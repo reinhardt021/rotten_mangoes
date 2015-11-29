@@ -1,23 +1,14 @@
-<h1>Rotten Mangoes</h1>
-<hr>
-<%= link_to "Submit a movie!", new_movie_path %>
-<hr>
-<h3>SEARCH</h3>
-<%= form_tag "/search", method: "get" do %>  
-  <div>
-    <%= label_tag :search, "Title or Director:" %>
-    <%= text_field_tag :search %>  
-  </div>
-  <div>
-    <%= label_tag :runtime, "Duration:" %>
-    <%= select_tag :runtime, options_for_select(duration_select_options) %>  
-  </div>
-  <div>
-    <%= submit_tag "search" %>
-  </div>
-<% end %>
-<hr>
-<h3>MOVIES</h3>
-<% @movies.each do |movie| %>
-  <%= render partial: "movie", locals: {movie: movie} %>
-<% end %>
+<h2 class="text-center adder"><%= link_to "Submit a movie!", new_movie_path %></h2>
+<div class="row">
+  <% @movies.each_with_index do  |movie, index| %>
+
+    <%= render partial: "movie", locals: {movie: movie} %>
+
+    <% if (index+1) % 4 == 0 && (index+1) > 0  %>
+      </div>  
+      <div class="row">
+    <% end %>
+    
+  <% end %>
+
+</div>

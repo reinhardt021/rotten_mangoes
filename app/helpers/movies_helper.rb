@@ -6,9 +6,9 @@ module MoviesHelper
 
   def duration_select_options
     [
-      ["---", 0],
+      ["~ duration ~", 0],
       ["Under 90 minutes", 1],
-      ["Between 90 and 120 minutes", 2],
+      ["Between 90 \& 120 minutes", 2],
       ["Over 120 minutes", 3]
     ]
   end
