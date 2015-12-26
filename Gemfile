@@ -43,6 +43,6 @@ gem 'byebug', group: [:development, :test]
 
 gem 'bootstrap-sass'
 
-
+gem 'rails_12factor', group: :production
 
 
