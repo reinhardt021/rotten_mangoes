@@ -20,12 +20,12 @@ class Movie < ActiveRecord::Base
   scope :search, lambda { |search, runtime|
     
     if search
-      search = "%#{search.to_s}%"     
+      search = "%#{search.to_s.downcase}%"     
     else
       search = ""
     end
 
-    sql = "title LIKE ? OR director LIKE ?"
+    sql = "LOWER(title) LIKE ? OR LOWER(director) LIKE ?"
     
     case runtime.to_i
     when 1 then sql += " AND runtime_in_minutes < 90"
